@@ -77,6 +77,8 @@ namespace Hiharu.BlendShapeTools
         private string negativeName = "", positiveName = "";
         private bool assign;
         private Vector2 scroll;
+        private string diagnosticReport;
+        private Vector2 diagnosticScroll;
 
         [MenuItem("Tools/Hiharu/BlendShape Side Splitter")]
         public static void Open() => GetWindow<SideSplitterWindow>("Shape Side Splitter");
@@ -108,6 +110,7 @@ namespace Hiharu.BlendShapeTools
                     if (GUILayout.Button("分割メッシュを保存…")) Save(mesh);
             }
             else EditorGUILayout.HelpBox("BlendShapeを持つSkinnedMeshRendererを指定してください。", MessageType.Info);
+            SupportPanel.Draw(() => SplitterDiagnostics.Build(target, shape, axis, plane, negativeName, positiveName, assign), "https://github.com/Hiharu/blendshape-side-splitter#readme", ref diagnosticReport, ref diagnosticScroll);
             EditorGUILayout.EndScrollView();
         }
 

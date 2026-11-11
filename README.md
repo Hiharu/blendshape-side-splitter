@@ -14,7 +14,7 @@ Read/Writeが無効な場合はモデルのImport Settingsで有効にしてく�
 
 ## 導入と使い方
 
-1. `BlendShapeSideSplitter_1.0.0.unitypackage`をUnityの **Assets → Import Package → Custom Package** から導入します。
+1. `BlendShapeSideSplitter_1.1.0.unitypackage`をUnityの **Assets → Import Package → Custom Package** から導入します。
 2. **Tools → Hiharu → BlendShape Side Splitter** を開きます。
 3. 対象のSkinnedMeshRendererを指定し、分割するキーを選びます。
 4. 分割軸と位置を設定します。通常の左右分割はX、位置0から確認しますが、モデルの座標によって異なります。正負は画面の左右やアバターの左右と同義ではありません。
@@ -52,3 +52,15 @@ Read/Writeが無効な場合はモデルのImport Settingsで有効にしてく�
 ## 検証・ライセンス
 
 検証範囲は`VERIFICATION.md`を参照してください。MIT License、Copyright (c) 2026 Hiharu。
+
+## 環境チェックと診断結果コピー
+
+**Tools → Hiharu → BlendShape Side Splitter**を開き、入力欄の下にある診断ボタンを使います。
+
+**環境チェック**で、その時点の設定と対処の案内を表示します。**診断結果をコピー**は再チェックした結果をクリップボードへコピーします。**導入ガイド**はこのREADMEをブラウザーで開きます。
+
+Read/Write、選択キー、分割軸・位置、頂点分布、追加名の重複、直接適用する対象を確認します。頂点の位置分布とキーの変形量は別のため、両側の変形は保存時にも検査します。
+
+診断は設定を変更せず、アバター名・素材名・個人のファイルパス・Blueprint ID・Consoleログ本文を含めません。自動送信もしません。不具合相談ではコピーした結果に「操作した段階・期待した動作・実際の動作」を追記してください。ログや画像を別途添付する場合は、公開してよい内容か確認してください。
+
+Package Managerに登録されていないAssets形式の依存パッケージは、バージョンを判別できないことがあります。コンパイルエラーがあると診断画面自体も開けないため、その場合はConsoleと前提条件を確認してください。診断は実モデルの見た目・他ギミックとの競合・VRChat実機の動作を保証しません。
